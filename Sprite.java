@@ -4,7 +4,11 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Double;
 
 public abstract class Sprite{
-	int x , y , w ,h;
+	int x;
+	int y;
+	int w;
+	int h;
+	
 
 	public Sprite(int x ,int y, int w , int h){
 		this.x = x;

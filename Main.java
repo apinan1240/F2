@@ -11,8 +11,11 @@ public class Main{
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setSize(400, 650);
 		f.getContentPane().setLayout(new BorderLayout());
+		
+		GamePanel gp = new GamePanel();
+		GameEngine en = new GameEngine(gp);
+		f.getContentPane().add(gp, BorderLayout.CENTER);
 		f.setVisible(true);
-
 	}
 
 
