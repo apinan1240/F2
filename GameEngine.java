@@ -11,10 +11,23 @@ import javax.swing.Timer;
 
 public class GameEngine{
 	GamePanel gp;
-	private ArrayList<Enemy> en = new ArrayList<Enemy>();	
+	private ArrayList<Enemy> en = new ArrayList<Enemy>();
+	
+	private Timer time;
+	private double diff = 0.1;
+
 	public GameEngine(GamePanel gp){
 		this.gp = gp;
-		process();
+		time = new Timer(50, new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0){
+				process();
+			}
+		});
+		time.setRepeats(true);
+	}
+	public void start(){
+		time.start();
 	}
 	private void generateEnemy(){
 		Enemy e = new Enemy(100,50);
@@ -22,8 +35,25 @@ public class GameEngine{
 		en.add(e);
 	}
 	private void process(){
-		generateEnemy();
+		if(Math.random() < diff){
+			generateEnemy();	
+		}
+		Iterator<Enemy> e_iter = en.iterator();
+		while(e_iter.hasNext()){
+			Enemy e = e_iter.next();
+			e.proceed();
+			if(!e.isAlive()){
+				e_iter.remove();
+				gp.sp.remove(e);
+			}
+		}
 		gp.updateGameUI();
+		Rectangle2D.Double er;
+		for(Enemy e : en){
+			er = e.getRec();
+			
+		}
+	
 	}
 
 }
