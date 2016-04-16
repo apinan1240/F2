@@ -30,7 +30,7 @@ public class GameEngine{
 		time.start();
 	}
 	private void generateEnemy(){
-		Enemy e = new Enemy(100,50);
+		Enemy e = new Enemy((int)(Math.random()*390),50);
 		gp.sp.add(e);
 		en.add(e);
 	}
@@ -42,17 +42,16 @@ public class GameEngine{
 		while(e_iter.hasNext()){
 			Enemy e = e_iter.next();
 			e.proceed();
+
 			if(!e.isAlive()){
 				e_iter.remove();
 				gp.sp.remove(e);
+				
 			}
-		}
-		gp.updateGameUI();
-		Rectangle2D.Double er;
-		for(Enemy e : en){
-			er = e.getRec();
 			
 		}
+		gp.updateGameUI();
+		
 	
 	}
 

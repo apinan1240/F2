@@ -21,7 +21,7 @@ public class GamePanel extends JPanel{
 
 	public void updateGameUI(){
 		b1.clearRect(0 ,0 , 400,600);
-
+		b1.setColor(Color.WHITE);
 		for(Sprite s : sp){
 			s.draw(b1);
 		}
