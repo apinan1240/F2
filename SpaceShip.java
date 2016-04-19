@@ -5,15 +5,15 @@ public class SpaceShip extends Sprite{
 
 	
 	
-	public SpaceShip(int x, int y, int width, int height) {
-		super(x, y, width, height);
+	public SpaceShip(int x, int y, int w, int h) {
+		super(x, y, w, h);
 		
 	}
 
 	@Override
 	public void draw(Graphics2D g) {
 		g.setColor(Color.GREEN);
-		g.fillRect(x, y, width, height);
+		g.fillRect(x, y, w, h);
 		
 	}
 

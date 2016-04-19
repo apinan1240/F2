@@ -12,12 +12,14 @@ import javax.swing.Timer;
 public class GameEngine{
 	GamePanel gp;
 	private ArrayList<Enemy> en = new ArrayList<Enemy>();
-	
+	private SpaceShip v;	
 	private Timer time;
 	private double diff = 0.1;
 
-	public GameEngine(GamePanel gp){
+	public GameEngine(GamePanel gp, SpaceShip v){
 		this.gp = gp;
+		this.v = v;	
+		gp.sp.add(v);
 		time = new Timer(50, new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0){
@@ -29,13 +31,14 @@ public class GameEngine{
 	public void start(){
 		time.start();
 	}
-	private void generateEnemy(){
+	/*private void generateEnemy(){
 		Enemy e = new Enemy((int)(Math.random()*390),50);
 		gp.sp.add(e);
 		en.add(e);
-	}
+	}*/
 	private void process(){
-		if(Math.random() < diff){
+		
+		/*if(Math.random() < diff){
 			generateEnemy();	
 		}
 		Iterator<Enemy> e_iter = en.iterator();
@@ -49,7 +52,7 @@ public class GameEngine{
 				
 			}
 			
-		}
+		}*/
 		gp.updateGameUI();
 		
 	
