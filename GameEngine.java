@@ -31,14 +31,14 @@ public class GameEngine implements KeyListener{
 	public void start(){
 		time.start();
 	}
-	/*private void generateEnemy(){
+	private void generateEnemy(){
 		Enemy e = new Enemy((int)(Math.random()*390),50);
 		gp.sp.add(e);
 		en.add(e);
-	}*/
+	}
 	private void process(){
 		
-		/*if(Math.random() < diff){
+		if(Math.random() < diff){
 			generateEnemy();	
 		}
 		Iterator<Enemy> e_iter = en.iterator();
@@ -52,7 +52,7 @@ public class GameEngine implements KeyListener{
 				
 			}
 			
-		}*/
+		}
 		gp.updateGameUI();
 		
 	
