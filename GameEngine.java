@@ -51,12 +51,24 @@ public class GameEngine implements KeyListener{
 				gp.sp.remove(e);
 				
 			}
-			
+	
 		}
 		gp.updateGameUI();
-		
+		Rectangle2D.Double vr = v.getRec();
+		Rectangle2D.Double er;
+		for(Enemy e : en){
+			er = e.getRec();
+			if(er.intersects(vr)){
+				die();
+				return;
+			}
+		}	
 	
 	}
+	public void die(){
+		time.stop();
+	}
+
 	void controlVehicle(KeyEvent e) {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_LEFT:
