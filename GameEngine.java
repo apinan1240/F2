@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.Timer;
 
-public class GameEngine implements KeyListener{
+public class GameEngine implements KeyListener, GameReporter{
 	GamePanel gp;
 	private ArrayList<Enemy> en = new ArrayList<Enemy>();
 	private SpaceShip v;	
 	private Timer time;
 	private double diff = 0.1;
-
+	private long score = 0;
 	public GameEngine(GamePanel gp, SpaceShip v){
 		this.gp = gp;
 		this.v = v;	
@@ -49,11 +49,11 @@ public class GameEngine implements KeyListener{
 			if(!e.isAlive()){
 				e_iter.remove();
 				gp.sp.remove(e);
-				
+				score += 100;
 			}
 	
 		}
-		gp.updateGameUI();
+		gp.updateGameUI(this);
 		Rectangle2D.Double vr = v.getRec();
 		Rectangle2D.Double er;
 		for(Enemy e : en){
@@ -82,7 +82,9 @@ public class GameEngine implements KeyListener{
 			break;
 		}
 	}
-
+public long getScore(){
+		return score;
+	}
 	
 	
 	@Override

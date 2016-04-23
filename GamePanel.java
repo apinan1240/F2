@@ -19,9 +19,10 @@ public class GamePanel extends JPanel{
 		b1.setBackground(Color.BLACK);
 	}
 
-	public void updateGameUI(){
+	public void updateGameUI(GameReporter reporter){
 		b1.clearRect(0 ,0 , 400,600);
 		b1.setColor(Color.WHITE);
+		b1.drawString(String.format("%08d", reporter.getScore()), 300, 20);
 		for(Sprite s : sp){
 			s.draw(b1);
 		}
