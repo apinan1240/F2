@@ -11,8 +11,8 @@ public class Main{
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setSize(400, 650);
 		f.getContentPane().setLayout(new BorderLayout());
-		
-		SpaceShip v = new SpaceShip(180, 550, 20, 20);
+		f.setResizable(false);
+		SpaceShip v = new SpaceShip(180, 550, 50, 50);
 		GamePanel gp = new GamePanel();
 		GameEngine en = new GameEngine(gp, v);
 		f.addKeyListener(en);
