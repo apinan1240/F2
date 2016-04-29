@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 public class SpaceShip extends Sprite{
 
-	int step = 8;
+	int step = 18;
 	
 	public SpaceShip(int x, int y, int w, int h) {
 		super(x, y, w, h);

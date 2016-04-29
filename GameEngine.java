@@ -32,7 +32,7 @@ public class GameEngine implements KeyListener, GameReporter{
 		time.start();
 	}
 	private void generateEnemy(){
-		Enemy e = new Enemy((int)(Math.random()*390),50);
+		Enemy e = new Enemy((int)(Math.random()*390),30,40,50);
 		gp.sp.add(e);
 		en.add(e);
 	}

@@ -11,8 +11,8 @@ public class Enemy extends Sprite{
 	private int step = 12;
 	private boolean alive = true;
 
-	public Enemy(int x, int y){
-		super(x , y, 5, 10);
+	public Enemy(int x, int y ,int w ,int h){
+		super(x , y, w, h);
 	}
 	public void draw(Graphics2D g) {
 		if(y < Y_TO_FADE)
@@ -21,8 +21,7 @@ public class Enemy extends Sprite{
 			g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 
 					(float)(Y_TO_DIE - y)/(Y_TO_DIE - Y_TO_FADE)));
 		}
-		g.setColor(Color.RED);
-		g.fillRect(x, y, w, h);
+		g.drawImage(foe,(int) x,(int) y, w , h, null);
 		
 	}
 	public void proceed(){
